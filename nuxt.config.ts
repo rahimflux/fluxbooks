@@ -15,8 +15,8 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-01-01",
   devtools: { enabled: true },
 
-  // SSR enabled — cookies work server-side with useCookie()
-  ssr: true,
+  // SSR disabled due to .vue file resolution issue in production build
+  ssr: false,
 
   css: ["~/style.css", "primeicons/primeicons.css"],
 
