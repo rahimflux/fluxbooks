@@ -80,4 +80,19 @@ export default defineNuxtConfig({
       include: ["primevue/usetoast"],
     },
   },
+
+  nitro: {
+    rollupConfig: {
+      plugins: [
+        {
+          name: 'vue-resolver',
+          resolveId(id) {
+            if (id.endsWith('.vue')) {
+              return { id, external: true };
+            }
+          },
+        },
+      ],
+    },
+  },
 });

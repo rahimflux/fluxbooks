@@ -4,7 +4,7 @@ import { useAuthStore } from "@/domains/auth/stores/authStore";
 const authStore = useAuthStore();
 const router = useRouter();
 
-function handleLogout() {
+function handleLogout(): void {
   authStore.logout();
   router.push("/login");
 }
