@@ -33,7 +33,8 @@
   },
   "lint-staged": {
     "**/*.{vue,ts,js,mjs}": [
-      "eslint --fix"
+      "eslint --fix",
+      "eslint"
     ]
   }
 }
