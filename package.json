@@ -1,0 +1,39 @@
+{
+  "name": "fluxbooks-poc",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.5.5",
+    "@primevue/themes": "^4.2.0",
+    "pinia": "^2.2.4",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.2.0"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^0.7.0",
+    "@nuxtjs/tailwindcss": "^6.12.2",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
+    "nuxt": "^3.14.0",
+    "vue-eslint-parser": "^9.4.3"
+  },
+  "lint-staged": {
+    "**/*.{vue,ts,js,mjs}": [
+      "eslint --fix"
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# FluxBooks pre-commit hook
+# Runs ESLint (via lint-staged) on all staged .vue/.ts/.js files before commit.
+# If lint fails, the commit is blocked until errors are fixed.
+npx lint-staged
