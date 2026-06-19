@@ -15,8 +15,8 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-01-01",
   devtools: { enabled: true },
 
-  // SSR disabled due to .vue file resolution issue in production build
-  ssr: false,
+  // Keep SSR true for dev server to work properly
+  ssr: true,
 
   css: ["~/style.css", "primeicons/primeicons.css"],
 
@@ -36,7 +36,6 @@ export default defineNuxtConfig({
    */
   components: [
     { path: "~/domains/dashboard/components", pathPrefix: false },
-    { path: "~/shared/layout", pathPrefix: false },
   ],
 
   /**
@@ -82,17 +81,9 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    rollupConfig: {
-      plugins: [
-        {
-          name: 'vue-resolver',
-          resolveId(id) {
-            if (id.endsWith('.vue')) {
-              return { id, external: true };
-            }
-          },
-        },
-      ],
+    prerender: {
+      crawlLinks: false,
+      routes: ["/"],
     },
   },
 });
