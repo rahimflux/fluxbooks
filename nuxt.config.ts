@@ -20,7 +20,22 @@ export default defineNuxtConfig({
 
   css: ["~/style.css", "primeicons/primeicons.css"],
 
-  modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxt/eslint"],
+modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxtjs/i18n", "@nuxt/eslint"],
+
+  i18n: {
+    defaultLocale: "en",
+    strategy: "prefix_except_default",
+    langDir: "locales/",
+    locales: [
+      { code: "en", file: "en.json" },
+      { code: "fr", file: "fr.json" },
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: "fluxbooks-i18n",
+      fallbackLocale: "en",
+    },
+  },
 
   postcss: {
     plugins: {
@@ -34,9 +49,7 @@ export default defineNuxtConfig({
    * Nuxt scans these directories and registers components globally —
    * no import needed in .vue files.
    */
-  components: [
-    { path: "~/domains/dashboard/components", pathPrefix: false },
-  ],
+  components: [{ path: "~/domains/dashboard/components", pathPrefix: false }],
 
   /**
    * Auto-imports for composables, services, and Pinia stores.
@@ -54,10 +67,11 @@ export default defineNuxtConfig({
   /**
    * runtimeConfig — environment-specific configuration.
    * public.*  → exposed to client + server
-   * (no public key here since we removed Turnstile)
    */
   runtimeConfig: {
-    public: {},
+    public: {
+      appThemeDefault: "dark",
+    },
   },
 
   app: {
@@ -83,7 +97,17 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: false,
-      routes: ["/"],
+      routes: [],
+    },
+
+    // Workaround: Nitro’s internal rollup-plugin-inject is trying to parse .vue SFCs.
+    // Excluding .vue from this pass prevents the inject plugin from touching SFC sources.
+    // Nitro exposes rollupConfig; we use it to prevent inject from touching SFC sources.
+    // Note: keep this minimal to avoid TS/ESLint issues.
+    rollupConfig: {
+      external: (id: string) => id.endsWith(".vue"),
     },
   },
+
 });
+

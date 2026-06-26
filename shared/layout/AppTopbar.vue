@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { useAuthStore } from "@/domains/auth/stores/authStore";
 
+import LocaleAndThemeControls from "~/shared/components/Controls/LocaleAndThemeControls.vue";
+
 const authStore = useAuthStore();
 const router = useRouter();
+
 
 function handleLogout(): void {
   authStore.logout();
@@ -12,7 +15,8 @@ function handleLogout(): void {
 
 <template>
   <header
-    class="h-16 border-b border-slate-800 bg-slate-900 px-6 flex items-center justify-between shrink-0"
+    class="h-16 border-b px-6 flex items-center justify-between shrink-0"
+    style="background: var(--flux-surface); border-bottom: 1px solid var(--flux-border)"
   >
     <div>
       <h2 class="font-semibold text-white text-sm">
@@ -24,7 +28,12 @@ function handleLogout(): void {
       </p>
     </div>
 
+
     <div class="flex items-center gap-3">
+      <!-- Language + Theme controls (UI test) -->
+      <LocaleAndThemeControls />
+
+
       <div
         class="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-xs font-bold text-white"
       >

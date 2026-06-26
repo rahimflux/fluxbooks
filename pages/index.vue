@@ -12,11 +12,12 @@ import { kpiData } from '@/domains/dashboard/infrastructure/data/mockDashboard'
   <div class="space-y-6">
     <!-- Page header -->
     <div>
-      <h1 class="text-2xl font-bold text-white">Dashboard</h1>
-      <p class="text-slate-400 text-sm mt-1">FluxBooks Operating Center — real-time overview</p>
+      <h1 class="text-2xl font-bold text-white">{{ $t('dashboard.title') }}</h1>
+      <p class="text-slate-400 text-sm mt-1">{{ $t('dashboard.subtitle') }}</p>
     </div>
 
     <!-- KPI Section -->
+
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
       <KpiCard
         v-for="kpi in kpiData"

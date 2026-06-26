@@ -4,6 +4,7 @@ import AppShell from "~/shared/layout/AppShell.vue";
 
 <template>
   <AppShell>
+
     <slot />
   </AppShell>
 </template>

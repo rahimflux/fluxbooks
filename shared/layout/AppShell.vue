@@ -4,8 +4,10 @@ import AppTopbar from "./AppTopbar.vue";
 </script>
 
 <template>
-  <div class="flex h-screen bg-slate-950 text-white overflow-hidden">
+  <div class="flex h-screen overflow-hidden" style="background: var(--flux-bg); color: var(--flux-fg)">
     <AppSidebar />
+
+
     <div class="flex flex-col flex-1 overflow-hidden">
       <AppTopbar />
       <main class="flex-1 overflow-y-auto p-6">

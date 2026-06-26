@@ -1,0 +1,29 @@
+{
+  "common": {
+    "dashboard": "Tableau de bord",
+    "menu": "Menu principal",
+    "logout": "Déconnexion"
+  },
+  "auth": {
+    "title": "FluxBooks",
+    "subtitle": "Connectez-vous à votre compte",
+    "emailLabel": "Adresse e-mail",
+    "passwordLabel": "Mot de passe",
+    "showPassword": "Afficher le mot de passe",
+    "hidePassword": "Masquer le mot de passe",
+    "signIn": "Se connecter",
+    "signingIn": "Connexion...",
+    "errorInvalidEmail": "Veuillez saisir une adresse e-mail valide",
+    "errorInvalidPassword": "Le mot de passe doit contenir au moins 6 caractères",
+    "errorLoginFailed": "Échec de la connexion. Veuillez réessayer.",
+    "googleComingSoon": "Intégration Google à venir.",
+    "microsoftComingSoon": "Intégration Microsoft à venir.",
+    "demoCredentialsTitle": "Identifiants de démo",
+    "demoCredentialsHint": "demo@fluxbooks.com / demo1234"
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "subtitle": "Centre d’exploitation FluxBooks — aperçu en temps réel"
+  }
+}
+

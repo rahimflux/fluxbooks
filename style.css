@@ -5,9 +5,39 @@ body,
 }
 
 body {
-  @apply bg-slate-950 text-slate-100;
   font-family: Inter, sans-serif;
+  background: var(--flux-bg);
+  color: var(--flux-fg);
 }
+
+/* Theme tokens driven by html[data-theme="..."] */
+html[data-theme="dark"] {
+  --flux-bg: #020617; /* slate-950 */
+  --flux-fg: #e2e8f0; /* slate-200 */
+
+  --flux-surface: #0f172a; /* slate-900 */
+  --flux-surface-2: #111827; /* slightly different */
+  --flux-border: rgba(148, 163, 184, 0.2); /* slate-400 at low alpha */
+}
+
+html[data-theme="light"] {
+  --flux-bg: #f8fafc; /* slate-50 */
+  --flux-fg: #0f172a; /* slate-900 */
+
+  --flux-surface: #ffffff;
+  --flux-surface-2: #f1f5f9; /* slate-100 */
+  --flux-border: rgba(15, 23, 42, 0.15);
+}
+
+html[data-theme="ocean"] {
+  --flux-bg: #06223a; /* ocean-ish deep */
+  --flux-fg: #e5f0ff;
+
+  --flux-surface: #0b2f52;
+  --flux-surface-2: #0a2644;
+  --flux-border: rgba(56, 189, 248, 0.25); /* sky-400-ish */
+}
+
 
 ::-webkit-scrollbar {
   width: 8px;

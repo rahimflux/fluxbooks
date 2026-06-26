@@ -18,7 +18,7 @@ const menuItems: MenuItem[] = [
 </script>
 
 <template>
-  <aside class="w-64 bg-slate-900 border-r border-slate-800 flex flex-col">
+  <aside class="w-64 flex flex-col" style="background: var(--flux-surface); border-right: 1px solid var(--flux-border)">
     <!-- Logo -->
     <div class="h-16 flex items-center px-6 border-b border-slate-800 shrink-0">
       <div class="flex items-center gap-2.5">

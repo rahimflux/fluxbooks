@@ -1,0 +1,30 @@
+{
+  "common": {
+    "dashboard": "Dashboard",
+    "menu": "Main Menu",
+    "logout": "Logout"
+  },
+  "auth": {
+    "title": "FluxBooks",
+    "subtitle": "Sign in to your account",
+    "emailLabel": "Email address",
+    "passwordLabel": "Password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "signIn": "Sign In",
+    "signingIn": "Signing In...",
+    "errorInvalidEmail": "Please enter a valid email address",
+    "errorInvalidPassword": "Password must be at least 6 characters",
+    "errorLoginFailed": "Login failed. Please try again.",
+    "googleComingSoon": "Google login integration coming soon.",
+    "microsoftComingSoon": "Microsoft login integration coming soon.",
+    "demoCredentialsTitle": "Demo credentials",
+    "demoCredentialsHint": "demo at fluxbooks dot com / demo1234"
+
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "FluxBooks Operating Center — real-time overview"
+  }
+}
+
